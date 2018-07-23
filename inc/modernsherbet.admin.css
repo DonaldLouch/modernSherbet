@@ -1,0 +1,61 @@
+body {
+  font-family: "lato", sans-serif;
+}
+
+#wpbody h1 {
+  font-size: 4em;
+}
+
+#wpbody h2 {
+  font-size: 1.7em;
+}
+
+#wpbody input {
+    font-size: 1em;
+    padding: 1em;
+    margin: 0 1em;
+    width: 28%;
+    box-sizing: border-box;
+    border-top: hidden;
+    border-left: hidden;
+    border-bottom: solid #430C8C 1.9px;
+    border-right: hidden;
+    background: none;
+    font-family: inherit;
+}
+
+#wpbody #submit {
+    padding: 0;
+    font-size: 1.3em;
+    cursor: pointer;
+    border-radius: 0.3em;
+    box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, rgba(93,17,192,1) 0%, rgba(109,60,182,1) 94%, rgba(110,63,181,1) 100%);
+    color: #fff;
+    text-transform: capitalize;
+    margin: 0;
+    width: 8em;
+    text-shadow: none;
+}
+
+#wpbody #submit:hover {
+    background: none;
+		color: #430C8C;
+}
+
+#wpbody a {
+  font-size: 1.2em;
+  text-decoration: none;
+  background-color: #430C8C;
+  color: #fff;
+  padding: 0.5em;
+}
+
+#wpbody a:hover {
+    background: none;
+    color: #430C8C;
+}
+
+#wpbody li {
+    margin: 2em 1em;
+}
