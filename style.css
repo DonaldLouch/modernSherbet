@@ -4,9 +4,9 @@
 	Author: Donald Louch Productions
 	Author URI: https://donaldlouch.ca
 	Description: Modern Sherbet is a modern twist on the taste design of sherbet. It’s bright and colourful! There’s animated button on hover, there’s drop shadows (also known a box shadows) all around the theme. The theme features shorcodes for toggles and further tabs. The theme is equipped with CSS for contact forms and Woocommerces. The theme features different styles for multiple post types which can be controlled in the WordPress Dashboard.
-	Version: 1.1.1.2
-	License: GNU General Public License v3 or later
-	License URI: http://www.gnu.org/licenses/gpl-3.0.html
+	Version: 1.1.1
+	License: GNU General Public License v2 or later
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	Tags: flexible-header, custom-header, custom-logo, featured-image-header, featured-images, full-width-template, post-formats, sticky-post, threaded-comments, blog, e-commerce, portfolio
 	Text Domain: modernsherbet
 */
@@ -77,8 +77,7 @@ body {
 	font-size: 18px;
 	font-family: "lato", sans-serif; /* Use this to change the font */
 	margin: 0;
-	/*background: linear-gradient(135deg, rgba(67,12,140,0.9542017490589986) 0%, rgba(231,196,98,1) 49%, rgba(115,229,147,1) 100%);  /* Creates a the modernSherbet gradient */
-	background-color:red;
+	background: linear-gradient(135deg, rgba(67,12,140,0.9542017490589986) 0%, rgba(231,196,98,1) 49%, rgba(115,229,147,1) 100%);  /* Creates a the modernSherbet gradient */
 	overflow-y: scroll;
 	max-width: 100%;
 }
@@ -579,12 +578,16 @@ h2.pageNav {
 } /* Hides the "Screen Reader" titles for the pagination */
 
 .navigation.post-navigation div {
-	display: inline-block;
-	margin: 0.2em; width: 100%;
+    margin: -0em 0.2em;
+    display: inline-flex;
 }
 
 .navigation.post-navigation {
-	margin: -0.9em 2em;
+    margin: -0.9em 2em;
+}
+
+.nav-links a {
+    width: 100%;
 }
 
 /*
@@ -1100,6 +1103,53 @@ video.wp-video-shortcode,
 		/* width: calc(20% + 1px); */
 		margin: 0 0 0 -1px;
 	}
+}
+
+/*
+=====================================================================
+	11.0: Shortcode: Columns
+=====================================================================
+*/
+
+.columns {
+    display: grid;
+    text-align: center;
+}
+
+.column {
+	margin: 0.5em;
+	padding: 0.5em 0;
+}
+
+.columns.\32 {
+    grid-template-columns: 50% 50%;
+}
+
+.columns.\33 {
+    grid-template-columns: 33.33% 33.33% 33.33%;
+}
+
+.columns.\34 {
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.columns.\35 {
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.columns.\31 \/3 {
+	text-align: left;
+	grid-template-columns: 20% 80%;
+}
+
+.columns.\33 \/1 {
+	text-align: left;
+	grid-template-columns: 80% 20%;
+}
+
+.columns.\31 \/2\/1 {
+	text-align: left;
+	grid-template-columns: 20% 60% 20%;
 }
 
 /*
