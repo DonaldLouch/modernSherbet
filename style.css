@@ -77,7 +77,8 @@ body {
 	font-size: 18px;
 	font-family: "lato", sans-serif; /* Use this to change the font */
 	margin: 0;
-	background: linear-gradient(135deg, rgba(67,12,140,0.9542017490589986) 0%, rgba(231,196,98,1) 49%, rgba(115,229,147,1) 100%);  /* Creates a the modernSherbet gradient */
+	/*background: linear-gradient(135deg, rgba(67,12,140,0.9542017490589986) 0%, rgba(231,196,98,1) 49%, rgba(115,229,147,1) 100%);  /* Creates a the modernSherbet gradient */
+	background-color:red;
 	overflow-y: scroll;
 	max-width: 100%;
 }
