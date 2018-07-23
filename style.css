@@ -1,0 +1,1776 @@
+/*
+	Theme Name: modernSherbet
+	Theme URI: https://sherbet.theme.donaldlouch.ca
+	Author: Donald Louch Productions
+	Author URI: https://donaldlouch.ca
+	Description: Modern Sherbet is a modern twist on the taste design of sherbet. It’s bright and colourful! There’s animated button on hover, there’s drop shadows (also known a box shadows) all around the theme. The theme features shorcodes for toggles and further tabs. The theme is equipped with CSS for contact forms and Woocommerces. The theme features different styles for multiple post types which can be controlled in the WordPress Dashboard.
+	Version: 1.1.1
+	License: GNU General Public License v2 or later
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+	Tags: flexible-header, custom-header, custom-logo, featured-image-header, featured-images, full-width-template, post-formats, sticky-post, threaded-comments, blog, e-commerce, portfolio
+	Text Domain: modernsherbet
+*/
+
+/*
+=====================================================================
+0.0: CSS Reset
+	-  Resets all the CSS
+=====================================================================
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/*
+=====================================================================
+Table of Content
+	0.0: CSS Reset
+	1.0: General Body
+	2.0: Header
+	3.0: Pagination
+	4.0: Home
+	5.0: Content
+	6.0: Sidebar
+	7.0: Post Content
+	8.0: Gallery
+	9.0: Toggles
+	10.0: Tabs
+	11.0: Contact Form
+	12.0: Comment Section
+	13.0: Pages
+	14.0: Author
+	15.0: 404
+	16.0: WooCommerce's
+	17.0: Footer
+	18.0: Responsive Design
+	19.0: Custom Styles
+=====================================================================
+*/
+
+/*
+=====================================================================
+	1.0: General Body
+=====================================================================
+*/
+
+body {
+	font-size: 18px;
+	font-family: "lato", sans-serif; /* Use this to change the font */
+	margin: 0;
+	background: linear-gradient(135deg, rgba(67,12,140,0.9542017490589986) 0%, rgba(231,196,98,1) 49%, rgba(115,229,147,1) 100%);  /* Creates a the modernSherbet gradient */
+	overflow-y: scroll;
+	max-width: 100%;
+}
+
+a:link, a:visited {
+	color:  #430C8C; /* Use this to change the link colour */
+	text-decoration: none;
+}
+
+a:hover {
+	color: #403D3C; /* Use this to change the link colour when hovering */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0.1em 0;
+	font-weight: 300;
+	text-shadow: 1px 1px 8px rgba(0,0,0,0.19);
+	clear: both;
+}
+
+h1 {
+	font-size: 5em;
+}
+
+h2 {
+	font-size: 4em;
+}
+
+h3 {
+	font-size: 3em;
+}
+
+h4 {
+	font-size: 2em;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.5em;
+}
+
+p {
+	font-weight: 300;
+	font-size: 1.1em;
+	margin: 1em 0;
+}
+
+hr {
+	margin: 1em 1.5em;
+	border: 0.5px solid #430C8C;
+} /* ADD TO DOC ?*/
+
+ul, ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+q {
+	font-weight: bold;
+	font-style: italic;
+}
+
+.divNoBreak br {
+	display: none;
+} /* Shortcode: [nobreak]CONTENT[/nobreak] */
+
+blockquote {
+	border-left: 2px solid #430C8C;
+	margin: 1em 0 1em 2em;
+	padding: 0.1em 0 0.1em 1em;
+}
+
+cite {
+	display: block;
+	font-style: italic;
+	font-weight: bold;
+	margin: 1em;
+}
+
+dt {
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+dd {
+	text-indent: 1.5em;
+	font-weight: 300;
+}
+
+abbr,
+acronym {
+	font-weight: 700;
+}
+
+big {
+	font-size: 2em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: "Source Code Pro";
+	font-weight: 300;
+	color: #0078ff;
+}
+
+pre {
+	background-color: #eee;
+	padding: 1em;
+	font-family: "Source Code Pro";
+	font-weight: 300;
+	overflow: auto;
+}
+
+sub {
+	font-size: 0.6em;
+	vertical-align: sub;
+}
+
+sup {
+	font-size: 0.6em;
+	vertical-align: super;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(2n) {
+	background-color: #430C8C;
+	color: #fff;
+}
+
+tr:nth-child(2n) a {
+	color: #fff;
+}
+
+.alignnone.size-large {
+	width: 100%;
+	height: 100%;
+}
+
+.alignnone {
+	margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+	display: block;
+	margin: 5px auto 5px auto;
+}
+
+.alignright {
+	float:right;
+	margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+	float: left;
+	margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+	float: right;
+	margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+	margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+	float: left;
+	margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	background: #fff;
+	border: 1px solid #f0f0f0;
+	max-width: 96%; /* Image does not overflow the content area */
+	padding: 5px 3px 10px;
+	text-align: center;
+}
+
+.wp-caption.alignnone {
+	margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+	margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+	margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+	border: 0 none;
+	height: auto;
+	margin: 0;
+	max-width: 98.5%;
+	padding: 0;
+	width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	margin: 0;
+	padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #eee;
+	clip: auto !important;
+	color: #444;
+	display: block;
+	font-size: 1em;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+.nav-links a,
+.nav-previous a,
+.nav-next a,
+.navLinks a,
+.welcomeButton a,
+a.button,
+.downloadResButton a,
+.alignleft a,
+.alignright a,
+.woocommerce div.product form.cart .button,
+a.checkout-button.button.alt.wc-forward,
+.woocommerce #payment #place_order,
+.woocommerce-page #payment #place_order,
+.woocommerce-MyAccount-navigation a {
+	padding: 0.4em;
+	font-size: 1em;
+	cursor: pointer;
+	border-radius: 0.3em;
+	box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.5);
+	background: linear-gradient(135deg, rgba(93,17,192,1) 0%, rgba(109,60,182,1) 94%, rgba(110,63,181,1) 100%); /* Use this to change the background colour of the buttons */
+	color: #fff; /* Use this to change the text colour of the buttons */
+	text-transform: capitalize;
+} /* Buttons */
+
+.page-numbers:hover,
+.nav-previous a:hover,
+.nav-next a:hover,
+.navLinks a:hover,
+.welcomeButton a:hover,
+a.button:hover,
+.downloadResButton a:hover,
+.alignleft a:hover,
+.alignright a:hover,
+.woocommerce div.product form.cart .button:hover,
+a.checkout-button.button.alt.wc-forward:hover,
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover,
+.woocommerce-MyAccount-navigation a:hover {
+	animation-name: hover;
+	animation-duration: 2s; /* Adds an animation to the buttons when hovering */
+	background: linear-gradient(-185deg, #764788 0%,#e7c462 52%,#73e593 100%); /* Once the animation is complete this will be the background; Use this to change the background od the buttons when hovered */
+}
+@keyframes hover {
+	0% {
+		background: linear-gradient(-185deg, #764788 0%,#e7c462 52%,#73e593 100%); /* Use this to change the background/direction of the hover */
+		color: rgba(0,0,0,1);
+	}
+
+	25% {
+		background: linear-gradient(-90deg, #764788 0%,#e7c462 52%,#73e593 100%);
+		color: rgba(0,1,0,0.9);
+	}
+
+	50% {
+		background: linear-gradient(0deg, #764788 0%,#e7c462 52%,#73e593 100%);
+		color: rgba(1,1,0,0.8);
+	}
+
+	75% {
+		background: linear-gradient(90deg, #764788 0%,#e7c462 52%,#73e593 100%);
+		color: rgba(1,1,1,0.7);
+	}
+
+	100% {
+		background: linear-gradient(185deg, #764788 0%,#e7c462 52%,#73e593 100%);
+		color: rgba(10,1,10,0.5);
+	}
+} /* Creates the 3d like logo animation when hovering over a button */
+
+a.button {
+	margin: 1em 0;
+}
+
+a.flatButton {
+	background-color: #430C8C;
+	padding: 0.5em;
+	margin: 0 0.2em;
+	color: #fff;
+}
+
+a.flatButton:hover {
+	color: #430C8C;
+	background: none;
+} /* Download Section */
+
+/*
+=====================================================================
+	2.0: Header
+=====================================================================
+*/
+
+.logged-in.admin-bar header {
+	margin: 1.7em 0;
+} /* Code to make the header shift down when you're logged in! */
+
+header {
+	display: grid;
+	grid-template-columns: 30% 70%;
+	box-shadow: -2px 7px 18px 3px rgba(0, 0, 0, 0.5);
+	padding: 0.2em 1em 2em;
+	background-color: #fff; /* Use this to change the background colour of the header*/
+	position: fixed;
+	height: 4.6em;
+	z-index: 100;
+	width: 98.7%;
+	top: 0.6vh;
+	left: 0.6vw; /* Creates a sticky + floating header */
+	animation-name: header;
+	animation-duration: 0.8s; /* Adds an animation to the header when loading */
+}
+@keyframes header {
+	0% {
+		top:0;
+		left: 0;
+		opacity: 0.1;
+	}
+
+	100% {
+		top:0.6vh;
+		left: 0.6vw;
+		opacity: 1;
+	}
+} /* Creates a fade-in with a slide from top left to centre when loading the page */
+
+header img {
+	width: 19vw;
+	margin: 0.56em 0;
+}
+
+#menu-main {
+	text-align: right;
+	margin: 0.65em;
+	overflow: auto;
+	white-space: nowrap;
+}
+
+#menu-main li {
+	display: inline-block;
+	margin: 0.5em 0;
+}
+
+#menu-main a {
+	font-size: 1.1em;
+	margin: 0 0.5em 0;
+	text-shadow: 1px 1px 8px rgba(0,0,0,0.19);
+	border-bottom: solid #16042F;
+}
+
+/*Main sub menu style + level 1*/
+.sub-menu {
+	display: none; /* When in normal state, the sub menu is not displayed  */
+	position: fixed;
+	text-align: center;
+	padding: 1em;
+	margin: 3vh 0;
+	left: 0.8vw;
+	width: 98%;
+	background: rgba(245,244,244,0.95); /* Use this to change the background colour of the sub menu */
+	z-index: 300;
+}
+
+/* Sub menu level 2 */
+.sub-menu .sub-menu {
+	margin-left: 0.5em;
+	width: 96.7%;
+}
+
+/* Sub menu level 3 */
+.sub-menu .sub-menu .sub-menu {
+	margin-left: 1em;
+	width: 95.5%;
+}
+
+/* Sub menu level 4 */
+.sub-menu .sub-menu .sub-menu .sub-menu {
+	margin-left: 1.4em;
+	width: 94.7%;
+}
+
+/* Sub menu level 5 */
+.sub-menu .sub-menu .sub-menu .sub-menu .sub-menu {
+	margin-left: 1.8em;
+	width: 93.5%;
+}
+
+#menu-main li:hover ul.sub-menu {
+	display: inline-block; /* When hovered the sub menu will be displayed in an "inline-block" */
+	animation-name: subMenu;
+	animation-duration: 0.8s; /* Adds an animation to the sub menu when hovering */
+}
+@keyframes subMenu {
+	0% {
+		opacity: 0.1;
+	}
+
+	100% {
+		opacity: 1;
+	}
+} /* Creates a fade-in when hovered */
+
+
+/*
+=====================================================================
+	3.0: Pagination
+=====================================================================
+*/
+
+h2.pageNav {
+	display: none;
+} /* Hides the "Screen Reader" titles for the pagination */
+
+.navigation.post-navigation div {
+	display: inline-block;
+	margin: 0.2em; width: 100%;
+}
+
+.navigation.post-navigation {
+	margin: -0.9em 2em;
+}
+
+/*
+=====================================================================
+	4.0: Home
+=====================================================================
+*/
+
+#welcome,
+.error404Content {
+	background: linear-gradient(-185deg, #764788 0%,#e7c462 52%,#73e593 100%); /* Use this to change the "image" or background on the home page */
+	text-align: center;
+	padding: 33vh 2em 0;
+	height: 108vh;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; /* Creates a "Parallax" effect; adapted from https://www.w3schools.com/howto/howto_css_parallax.asp */
+	margin: -2em 0;
+}
+
+#welcome h2 {
+	color: #fff; /* Use this to change the text colour of the "Welcome" title on the home page */
+	font-size: 4em; /* Use this to change the font size of the "Welcome" title on the home page */
+	margin: 0;
+	text-shadow: 1px 1px 8px rgba(0,0,0,0.19);
+}
+
+#welcome h3 {
+	color: #fff; /* Use this to change the text colour of the "Welcome" title on the home page */
+	font-size: 1.1em; /* Use this to change the font size of the "Welcome" title on the home page */
+	font-weight: 300;
+	margin: 0;
+	text-shadow: 1px 1px 8px rgba(0,0,0,0.19);
+}
+
+#welcome p {
+	color: #fff;/* Use this to change the text colour of the "Welcome" title on the home page */
+	font-weight: 300;
+	margin: 0.3em;
+}
+
+.welcomeButton {
+	margin: 1em;
+}
+
+#welcome .welcomeButton a {
+	font-size: 1.3em; /* Use this to change the text size of the "Welcome" buttons */
+	font-weight: 300;
+}
+
+/*
+=====================================================================
+	5.0: Content
+=====================================================================
+*/
+
+.sticky {
+	background-color: inherit;
+}
+
+#postsWrap {
+	display: grid;
+	grid-template-columns: 74% 24%;
+	max-width: 100%;
+	margin: 4em 0 0;
+}
+
+#posts {
+	margin: 0 2.2em 0 0.8em;
+} /* The wraper of the posts/content/blog page */
+
+article {
+	margin: 1.5em 0;
+	box-shadow: 3px 5px 20px 6px rgba(0, 0, 0, 0.5);
+	padding: 1.5em 2em;
+	border-radius: 0.3em;
+	background: radial-gradient(ellipse at center, #fcfcfc 0%,#fafafa 36%,#f5f7f9 100%); /* Creates a white gradient */
+} /* Controlls the articles */
+
+#posts article {
+	background: linear-gradient(-185deg, #764788 0%,#e7c462 52%,#73e593 100%);
+}
+
+.thumbPosts {
+	margin: -1.5em -2em 0;
+}
+
+.thumbPosts img {
+	width: 100%;
+	height: 100%;
+} /*The thumbnails on the posts/content/blog page */
+
+#posts h2 {
+	margin: 0.5em 0em 0em;
+	font-size: 2em;
+}
+
+.metadata,
+.tags {
+	font-weight: 300;
+	font-size: 0.8em;
+} /* Metadata infomation */
+
+.post-categories {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+}
+
+.post-categories li {
+	display: inline-block;
+}
+
+.post-categories a:hover {
+	color: #403D3C;
+} /* Converts the categories into a p element */
+
+.postExcerpt {
+	text-align: justify;
+	padding: 0.2em;
+	margin: 0em 0em 0.5em;
+}
+
+.readMore {
+	border: solid 2px #430C8C; /* Use this to change the border colour of the read more button */
+	padding: 0.5em;
+	font-size: 1em;
+	cursor: pointer;
+	border-radius: 0.4em;
+	box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.5);
+	margin-bottom: 1em;
+} /* Button */
+
+.tags {
+	padding: 1em;
+	border: 2px solid black;
+}
+
+#posts .tags {
+	margin: 2em 0 0;
+}
+
+#by {
+	margin: -1em 1em 0;
+	background: linear-gradient(135deg, rgba(231,195,98,1) 0%, rgba(167,142,71,0.93) 100%);
+	padding: 1em;
+}
+
+/*
+=====================================================================
+	6.0: Sidebar
+=====================================================================
+*/
+
+#sidebar {
+	width: 100%;
+	color: #fff;
+}
+
+#sidebar h2 {
+	font-weight: 300;
+	font-size: 2em;
+}
+
+#sidebar ul {
+	margin: 0;
+}
+
+#sidebar li {
+	list-style: none;
+	margin: 1em;
+}
+
+#sidebar p {
+	text-align: center;
+} /* Controls the Sidebar infomation */
+
+#sidebar a {
+	color: #fff;
+}
+
+input.search-field {
+	font-size: 0.7em;
+	width: 100%;
+	padding: 1em;
+	border-top: hidden;
+	border-left: hidden;
+	border-bottom: solid #fff.9px;
+	border-right: hidden;
+	background: none;
+	color: #fff;
+}
+
+#sidebar .screen-reader-text, input.search-submit {
+	display: none;
+} /* Hides the screen reader text */
+
+select#cat,
+#archives-dropdown-2 {
+	border-top: hidden;
+	border-left: hidden;
+	border-bottom: solid #fff 1.9px;
+	border-right: hidden;
+	background: none;
+	font-size: 0.8em;
+	color: #fff;
+} /* Dropdown menu for the catogroies */
+
+.tagcloud {
+	text-align: center;
+	padding: 1em;
+}
+
+#meta-2 li {
+	margin: 0;
+	padding: 0.2em 1em;
+}
+
+.navigation.pagination {
+	margin: 0 2em 1.5em;
+}
+
+/*
+=====================================================================
+	7. 0: Post Content
+=====================================================================
+*/
+
+#post  {
+	margin: -2em 0 0;
+} /* The wraper of the post page */
+
+.thumb img {
+	width: 100%;
+	height: 106vh;
+} /* Makes the thumbnail fit the full width of the page */
+
+.meta,
+.metaNI {
+	background-color: rgba(245,244,244,0.8); /* Use this to change the background colour of the meta information */
+	padding: 1em;
+	position: absolute;
+	top: 5.5em;
+	animation-name: meta;
+	animation-duration: 2s; /* Adds an animation to the Meta Box when hovering */
+}
+@keyframes meta {
+	0% {
+		left: -30vw;
+	}
+	100% {
+		left: 0;
+	}
+} /* Creates a fade-in with a slide from the left (off screen) to the left side (on screen) when loading the page */
+
+.meta h2 {
+	font-size: 2em;
+	margin: 0;
+}
+
+.meta .metadata {
+	margin: -1em 0 0;
+} /* Overlays the meta infomation on top of the thumbnail */
+
+.metaNI {
+	width: 96%;
+	margin: 0 1.5em;
+}
+
+.postContent article {
+	margin: -1em 1em 2.5em;
+}
+
+.postContentNI {
+	margin: 35vh 0 0;
+}
+
+.postContentNI article {
+	width: 98%;
+	margin: 0 auto 2em;
+}
+
+.content iframe {
+    margin: 0 -1.84em;
+    width: 97.9vw;
+    height: 47.4em;
+}
+
+/* Post Format Options */
+.single-format-video article,
+.single-format-audio article {
+	margin: 4em 1em 2.5em;
+}
+
+.single-format-video iframe {
+	width: 106.8%;
+	height: 47.8em;
+	margin: -9vh -3.2vw 0;
+	z-index: 1;
+} /* Allows for the iFrames, videos to expand over the post limit */
+
+.single-format-audio iframe {
+	width: 107%;
+	margin: 2vh -3.2vw 0;
+} /* Allows for the iFrames, audio to expand over the post limit */
+
+.single-format-link #post .content {
+	text-align: center;
+	font-size: 3em;
+}
+
+.wp-video,
+video.wp-video-shortcode,
+.mejs-container,
+.mejs-overlay.load {
+    width: 100% !important;
+    height: 49em !important;
+    margin: 2vh 0 0;
+    z-index: 1;
+}
+
+/*
+=====================================================================
+	8.0: Gallery
+=====================================================================
+*/
+
+.gallery img {
+	box-shadow: 0px 0px 5px #999;
+	width: 100%;
+	height: 100%;
+} /* Note: The only code that I was able to change in regrads to the image gallery. */
+
+.gallery-caption {
+	font-size: 1em;
+	font-weight: 300;
+	text-align: center;
+	padding:  1em;
+}
+
+.gallery-item {
+	width: 99%;
+	margin: 0;
+}
+
+#gallery-1, #gallery-2 {
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+}
+
+/* Attachent page styling */
+.wrapCenter,
+.wrapCenterAP {
+	text-align: center;
+}
+
+.wrapCenterAP {
+	color: #fff;
+}
+
+.attachment-large {
+	box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.downloadResButton {
+	overflow: auto;
+	white-space: nowrap;
+	width: 95%;
+	margin: 2em;
+	display: flex;
+}
+
+.downloadResButton a {
+	margin: 0 0.15em;
+	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.5);
+}
+
+.backPost {
+	margin: 6em 0 0;
+}
+
+/*
+=====================================================================
+	9.0: Toggles
+		- Creates the toggles/accordions (JavaScript Needed)
+		- Adapted from https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+=====================================================================
+*/
+
+.toggleButton {
+	background: linear-gradient(135deg, rgba(93,17,192,1) 0%, rgba(109,60,182,1) 94%, rgba(110,63,181,1) 100%); /* Use this to change the background colour of the toggles/accordions */
+	color: #fff; /* Use this to change the colour of the text of the toggles/accordions */
+	font-weight: 300;
+	cursor: pointer;
+	padding: 0.5em;
+	font-size: 1.5em;
+	display: inherit;
+	margin: 1em 0;
+	box-shadow: inset 0 2px #47a3da;
+}
+
+.toggleButton:active,
+.toggleButton:hover {
+	color: #ddd; /* Use this to change the hover background colour of the toggles/accordions */
+}
+
+.panel {
+	display: none;   /*Starts off as invisable then later changed through the scary world of JavaScript */
+	padding: 0.5em 1.5em;
+	text-align: justify;
+}
+
+.panel iframe {
+	margin: -2em -3.5em 0;
+	width: 97.9vw;
+	height: 51em;
+}
+
+/*
+=====================================================================
+	10.0: Tabs
+		- Creates the tabs (JavaScript Needed)
+		- Adapted from https://tympanus.net/codrops/2014/03/21/responsive-full-width-tabs/
+=====================================================================
+*/
+
+#tabs {
+	width: 100%;
+	overflow: hidden;
+	margin: 1em 0 2em;
+	font-weight: 300;
+}
+
+/* Nav */
+#tabs nav {
+	text-align: center;
+	border-bottom: solid 1px #430C8C;
+}
+
+#tabs nav ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	display: inline-block;
+}
+
+#tabs nav ul li {
+	margin: 0 0.25em;
+	display: block;
+	float: left;
+	position: relative;
+}
+
+#tabs nav li.tab-current {
+	z-index: 100;
+}
+
+#tabs nav a {
+	display: inline-block;
+	font-size: 1.45em;
+	line-height: 2.5;
+	padding: 0 1.25em;
+}
+
+#tabs nav a:hover {
+	color: #768e9d;
+}
+
+/* Content */
+.tabContent section {
+	font-size: 1.25em;
+	padding: 1em 1.5em;
+	display: none;
+	margin: 0 auto;
+}
+
+.tabContent iframe {
+    margin: -2.3em -1.45em 0;
+    width: 93.4vw;
+		height: 96vh;
+}
+
+/* Fallback example */
+.no-js .tabContent section {
+	display: block;
+	padding-bottom: 2em;
+	border-bottom: 1px solid #47a3da;
+}
+
+.tabContent section.content-current {
+	display: block;
+}
+
+@media screen and (max-width: 52.375em) {
+	#tabs nav a span {
+		display: none;
+	}
+	#tabs nav a:before {
+		margin-right: 0;
+	}
+}
+
+@media screen and (max-width: 32em) {
+	#tabs nav ul,
+	#tabs nav ul li a {
+		width: 100%;
+		padding: 0;
+	}
+
+	#tabs nav ul li {
+		width: 20%;
+		/* width: calc(20% + 1px); */
+		margin: 0 0 0 -1px;
+	}
+}
+
+/*
+=====================================================================
+	11.0: Contact Form
+=====================================================================
+*/
+
+.contactButton {
+	background: linear-gradient(135deg, rgba(93,17,192,1) 0%, rgba(109,60,182,1) 94%, rgba(110,63,181,1) 100%); /* Use this to change the background colour of the submit button */
+	border: none;
+	color: #fff;
+	padding: 0.5em;
+	font-size: 2em;
+	cursor: pointer;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	margin: 0 1em 2em;
+}
+
+.contactButton:hover {
+	color: #430C8C; /* Use this to change the colour of the submit button when hovered */
+	box-shadow: 0px 12px 16px rgba(26, 9, 66, 0);
+	background: none; /* Removes the background colour of the button when hovered */
+}
+
+.l6 {
+	font-size: 2em;
+}
+
+form section{
+	margin-top: 2em;
+} /* Adds margins to the form sections */
+
+select,
+.contactInput,
+textarea {
+	font-size: 0.7em; /* Use this to change the font size of the form fields */
+	padding: 1em;
+	margin: 0 1em;
+	width: 96%;
+	box-sizing: border-box;
+	border-top: hidden;
+	border-left: hidden;
+	border-bottom: solid #430C8C 1.9px; /* Use this to change the colour of the bottom line on the form */
+	border-right: hidden;
+	background: none;
+	font-family: inherit;
+}
+
+.contactInput:focus,
+.textarea:focus {
+	border-color: #1354c4;  /* Use this to change the border colour when clicked on to the field */
+}
+
+/*
+=====================================================================
+	12.0: Comment Section
+		- Classes adapted from: http://www.wpbeginner.com/wp-themes/how-to-style-your-wordpress-comments-layout/-
+=====================================================================
+*/
+
+.commentsArea {
+	margin: 2em 1em;
+	box-shadow: 3px 5px 20px 6px rgba(0, 0, 0, 0.5);
+	border-radius: 1em;
+	padding: 0.1em 1em;
+	background: radial-gradient(ellipse at center, #fcfcfc 0%,#fafafa 36%,#f5f7f9 100%);
+} /* Comment wrapper */
+
+.comment-meta {
+	background: linear-gradient(120deg, rgba(67,12,140,0.9542017490589986) 0%, rgba(118,71,136,0.710504270067402) 80%, rgba(118,71,136,0.8981793400954132) 100%);
+	box-shadow: -2px 7px 18px 3px rgba(0, 0, 0, 0.5);
+}
+
+.bypostauthor footer {
+	background: linear-gradient(135deg, rgba(67,12,140,0.9542017490589986) 0%, rgba(231,196,98,1) 49%, rgba(115,229,147,1) 100%);
+}
+
+.navLinks {
+	display: block;
+	margin: 0 0 2em;
+}
+
+.fn a {
+	color: #fff;
+}
+
+.comment-metadata time {
+	color: #fff;
+}
+
+.depth-2,
+.depth-3,
+.depth-4,
+.depth-5 {
+	margin: 0 0 0 5em;
+}
+
+#comments ol {
+	list-style: none;
+	width: 100%;
+	margin: 0;
+}
+
+.comment-title {
+	font-size: 3em;
+	margin: 1em 0.5em;
+}
+
+.commentlist .reply {
+	margin: 0 0 1em;
+} /* Comments */
+
+#commentform p {
+	border: none;
+	margin: 1em;
+} /* Comment relpy field */
+
+.commentlist .reply a {
+	border: solid 2px #430C8C;
+	color: #430C8C;
+	text-decoration: none;
+	padding: 8px;
+	font-size: 18px;
+	cursor: pointer;
+	border-radius: 5px;
+	box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.5);
+	margin: 0 0 1em;
+	background: none;
+}
+
+.commentlist .reply a:hover {
+	background-color: #430C8C;
+	color: white;
+} /* Links in the comments */
+
+.vcard .fn {
+	font-size: 3em;
+	font-weight: 300;
+}
+
+.avatar.avatar-50.photo {
+	border-radius: 2em;
+}
+
+.says {
+	display: none;
+}
+
+.commentlist .commentmetadata {
+	padding: 0em 0.5em;
+	font-weight: 300;
+	font-style: italic;
+} /* Commmenter information */
+
+.commentlist .parent,
+.commentlist .alt,
+.commentlist .odd,
+.commentlist .even,
+.commentlist .thread-alt,
+.commentlist .thread-odd,
+.commentlist .thread-even,
+.commentlist li ul.children .alt,
+.commentlist li ul.children .odd,
+.commentlist li ul.children .even {
+	padding: 1em 0 0 1em;
+	margin: 1em 0 0;
+	list-style: none;
+}
+
+.commentlist .comment,
+.commentlist li ul,
+.commentlist li ul.children li,
+.commentlist li ul.children li.alt,
+.commentlist li ul.children li.byuser,
+.commentlist li ul.children li.comment,
+.commentlist li ul.children li.bypostauthor,
+.commentlist li ul.children li.comment-author-admin {
+	margin: 1em 0 0;
+	list-style: none;
+}
+
+.commentlist .children {
+	padding: 1em;
+	list-style: none;
+	margin: 1em;
+}
+
+.commentlist {
+	padding: 0;
+}
+
+.commentlist li p {
+	border: black solid 2px;
+	padding: 1em;
+	margin: 1em;
+} /* Comments */
+
+.comment-form {
+	margin-top: 2em;
+}
+
+.comment-form label {
+	font-size: 1.4em;
+}
+
+.comment-form Input,
+.comment-form textarea,
+.comment-form option {
+	font-size: 0.7em;
+	padding: 1em;
+	margin: 1em 3em 2em;
+	width: 93%;
+	box-sizing: border-box;
+	border-top: hidden;
+	border-left: hidden;
+	border-bottom: solid #430C8C 1.9px;
+	border-right: hidden;
+	background: none;
+	font-family: inherit;
+	display: block;
+} /*Reply Section*/
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+	border-color: #1354c4; /* Use this to change the border colour when clicked on to the field */
+}
+
+#submit {
+	background: linear-gradient(135deg, rgba(93,17,192,1) 0%, rgba(109,60,182,1) 94%, rgba(110,63,181,1) 100%); /* Use this to change the background colour of the button  */
+	border: none;
+	color: #fff; /* Use this to change the colour of the text in the submit button  */
+	padding: 0.5em;
+	font-size: 1em;
+	cursor: pointer;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	margin: 0 1em 2em;
+}
+
+#submit:hover {
+	background: none; /* Removes the background of the button when hovered */
+	color: #430C8C; /* Use this to change the colour of the text of the button */
+} /* Comment submit button */
+
+/*
+=====================================================================
+	13.0: Pages
+=====================================================================
+*/
+
+.wrap {
+	margin: 2.3em 0 0;
+}
+
+#page article {
+	width: 97%;
+	margin: 0 0 1.5em 1em;
+}
+
+#page {
+	margin: 3em 0 0;
+} /* Page wrapper */
+
+/*
+=====================================================================
+	14.0: Athour
+=====================================================================
+*/
+
+#authourBio {
+	margin: 5.9em 1em 0;
+	background: linear-gradient(135deg, rgba(231,195,98,1) 0%, rgba(167,142,71,0.93) 100%);
+	padding:  0 2em 2em;
+}
+
+.authorH2 {
+	text-align: center;
+	color: #fff;
+}
+
+.authorWrap {
+	margin: -1.5em 1em !important;
+}
+
+#authorPosts {
+	width: 91em;
+}
+
+#authorPosts .navigation.pagination {
+	margin: 0 2em 3.5em;
+}
+
+#authorPosts .tags {
+	margin: 2em 0 0 auto !important;
+}
+
+/*
+=====================================================================
+	15.0: 404
+=====================================================================
+*/
+
+.error404Content .search-form {
+	text-align: center;
+	display: block;
+}
+
+.error404Content .screen-reader-text {
+	display: none;
+} /* Search field on the error 404 page */
+
+
+/*
+=====================================================================
+	16.0: WooCommerce's
+=====================================================================
+*/
+
+article.woocomerce {
+	margin: 1em;
+}
+
+.woocommerce-page .wrap {
+	margin: 4em 0 0;
+}
+
+div#woocomerce {
+	margin: 0;
+}
+
+.woocommerce-product-gallery.woocommerce-product-gallery--with-images.woocommerce-product-gallery--columns-4.images {
+	opacity: 1 !important;
+}
+
+.woocommerce div.product .product_title {
+	clear: none;
+	margin-top: 0;
+	padding: 0;
+	font-size: 3.5em;
+	text-align: justify;
+}
+
+.summary.entry-summary {
+	word-break: break-all;
+}
+
+.woocommerce .quantity .qty {
+	width: 3.631em;
+	text-align: center;
+	background: none;
+	border: none;
+	font-size: 1.3em;
+}
+
+.checkout.woocommerce-checkout form section{
+	margin-top: 2em;
+} /* Adds margins to the form sections */
+
+.checkout.woocommerce-checkout input,
+.checkout.woocommerce-checkout textarea,
+.post-password-form input,
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+	font-size: 0.7em; /* Use this to change the font size of the form fields */
+	padding: 1em;
+	margin: 0 1em;
+	border-top: hidden;
+	border-left: hidden;
+	border-bottom: solid #430C8C 1.9px; /* Use this to change the colour of the bottom line on the form */
+	border-right: hidden;
+	background: none;
+	font-family: inherit;
+}
+
+.checkout.woocommerce-checkout input:focus,
+.checkout.woocommerce-checkout textarea:focus,
+.post-password-form input:hover {
+	border-color: #430C8C; /* Use this to change the border colour when clicked on to the field */
+}
+
+
+.quantity,
+.checkout.woocommerce-checkout select {
+	font-size: 0.7em;
+	padding: 1em;
+	box-sizing: border-box;
+	border-top: hidden;
+	border-left: hidden;
+	border-bottom: solid #430C8C 1.9px;
+	border-right: hidden;
+	background: none;
+}
+
+#coupon_code {
+	font-size: 0.6em;
+	padding: 1em;
+	border-top: hidden;
+	border-left: hidden;
+	border-bottom: solid #fff.9px;
+	border-right: hidden;
+	background: none;
+	color: #fff;
+	width: 50%;
+	font-weight: 600;
+}
+
+.woocommerce .cart .button, .woocommerce .cart input.button {
+	float: none;
+	background-color: #fff;
+	font-family: inherit;
+	font-weight: 700;
+	text-transform: capitalize;
+	background: none;
+	color: #fff;
+	margin: 0;
+	padding: 0.5em 1em;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel {
+	display: block;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel h2 {
+	padding: 0 1em;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel p {
+	padding: 1em;
+	word-break: break-all;
+}
+
+.woocommerce button.button:hover {
+	background-color: #fff;
+	text-decoration: none;
+	background-image: none;
+	color: #515151;
+}
+
+.woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register {
+	padding: 2em;
+	border-radius: 5px;
+	background-color: #430C8C;
+	color: #fff;
+}
+
+.woocommerce-MyAccount-navigation li {
+	display: block;
+	margin: 1.3em 0;
+	text-align: justify;
+}
+
+.woocommerce-terms-and-conditions {
+	display: block !important;
+	max-height: 60vh;
+}
+
+.woocommerce-form-login input,
+.woocommerce-form-register input {
+	border-bottom: solid #fff 1.9px !important;
+	color: #fff;
+}
+
+.lost_password a,
+.woocommerce-privacy-policy-link {
+	color: #fff !important;
+	text-decoration: underline dashed !important;
+}
+
+/*
+=====================================================================
+	17.0: Footer
+=====================================================================
+*/
+
+footer {
+	box-shadow: -2px -4px 18px 3px rgba(0, 0, 0, 0.5);
+	padding: 1.5em;
+	text-shadow: 42px 40px 47px #979090;
+	background: linear-gradient(50deg, #45484d 0%,#000000 100%);
+	color: #ffffff;
+	font-size: 0.9em;
+	width: 100%;
+	margin: 0;
+}
+
+.footerButton a{
+	color: #ff0000;
+}
+
+.footerButton a:hover {
+	color: #E8DEE2;
+} /* Links in the footer */
+
+/*
+=====================================================================
+	18.0: Responsive Design
+=====================================================================
+*/
+
+@media screen and (min-width: 0) and (max-width: 600px) {
+	h1 {
+		font-size: 3.5em;
+	}
+	h2 {
+		font-size: 3.25em;
+	}
+	p {
+		display: block;
+	}
+	pre {
+		word-break: break-word;
+	}
+	header{
+		display: block; /* Makes it so that the logo and navagation are on their own lines */
+		text-align: center;
+		height: 4.9em;
+		width: 98.5%
+	}
+	header img {
+		width: 44%;
+	}
+	#menu-main {
+		text-align: center;
+		margin: -1.3em;
+		overflow: auto;
+		white-space: nowrap;
+		width: 97vw;
+	}
+	#menu-main a {
+		font-size: 1em;
+	}
+	.sub-menu {
+		margin: 1em 0;
+	}
+	.welcomeButton a {
+		display: block;
+	}
+	#postWrap {
+		display: block !important;
+		width: 95%;
+	}
+	#sidebar {
+		display: none;
+	}
+	#posts article {
+		width: 147%;
+		margin: 1.5em -0.3em;
+	}
+	.meta .metadata {
+		display: none; /* The meta information is hidden on mobile*/
+	}
+	.single-format-video iframe {
+		width: 100%;
+		height: 15em;
+		margin: -1.5em 0;
+	}
+	.wp-caption p.wp-caption-text {
+		display: none;
+	}
+	#gallery-2 .gallery-item {
+		clear: both; /* After every image, the next image is dispalyed in a new row */
+		height: 109%;
+		width: 109%;
+	}
+	#gallery-2 img {
+		width: 300%;
+	}
+	.attachment-large {
+		width: 114%;
+		height: 114%;
+	}
+	.post-title {
+		margin: 0.5em 0 0.5em;
+		font-size: 1em;
+	}
+	.tab {
+		font-size: 23px;
+	}
+	.tags {
+		width: 90%;
+	}
+	.comments{
+		width: 90%;
+	}
+	#comments article {
+		margin: 1em 0;
+	}
+	#commentform input,
+	#commentform textarea,
+	#commentform label {
+		display: block;
+		margin: 0;
+		width: 100%;
+	}
+	footer {
+		text-align: center;
+	}
+	img {
+		width: 100%;
+		height: auto;
+	}
+	#pageNav {
+		width: 100%;
+	}
+	.wrapCenterAP img {
+		width: 88%;
+		height: auto;
+	}
+	.downloadResButton {
+		width: 88%;
+	}
+	.backPost {
+		margin: 7.5em 0 0;
+	}
+}
+
+/* Large Displaies*/
+@media screen and (min-width: 601px) and (max-width: 1090px) {
+	header img {
+		width: 100%;
+		margin: 1.5vh 0;
+	}
+	#menu-main{
+		overflow: auto;
+		white-space: nowrap;
+		width: 67vw;
+		margin: 0.7em 0em;
+	}
+	#menu-main a {
+		font-size: 100%;
+	}
+	#postsWrap {
+		width: 94vw;
+	}
+	#calendar-2 {
+		display: none;
+	}
+	footer {
+		text-align: center;
+	}
+	#authorPosts {
+		width: 53em;
+	}
+	.wrapCenterAP img {
+		width: 88%;
+		height: auto;
+	}
+	.downloadResButton {
+		width: 88%;
+	}
+	.single-format-video iframe {
+		width: 119.7%;
+		margin: 0.5vh -8.2vw 0;
+		height: 19.07em;
+	} /* Allows for the iFrames, videos to expand over the post limit */
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+/*
+=====================================================================
+	19.0: Custom Styles
+		- Not theme specefic; but in this install only!
+		- RECOMMEND Inserting custom styles in a child theme: included!
+=====================================================================
+*/
+
+/*Your Styles Here! */
+
+/*
+=====================================================================
+	© 2013 - 2018 Donald Louch Productions
+=====================================================================
+*/
