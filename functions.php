@@ -14,6 +14,23 @@
 	//Theme: Word{ress Cleanup
 		require get_template_directory() . '/inc/cleanup.php';
 
+		/*
+		=====================================================================
+			Update Checker
+		=====================================================================
+		*/
+
+
+		require 'plugin-update-checker/plugin-update-checker.php';
+		$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+			'https://github.com/DonaldLouch/modernSherbet',
+			__FILE__,
+			'modernsherbet'
+		);
+
+		//Optional: Set the branch that contains the stable release.
+		$myUpdateChecker->setBranch('stable');
+
 
 /*
 =====================================================================
