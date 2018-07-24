@@ -4,7 +4,7 @@
 	Author: Donald Louch Productions
 	Author URI: https://donaldlouch.ca
 	Description: Modern Sherbet is a modern twist on the taste design of sherbet. It’s bright and colourful! There’s animated button on hover, there’s drop shadows (also known a box shadows) all around the theme. The theme features shorcodes for toggles and further tabs. The theme is equipped with CSS for contact forms and Woocommerces. The theme features different styles for multiple post types which can be controlled in the WordPress Dashboard.
-	Version: 1.1.1.1
+	Version: 1.1.1
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	Tags: flexible-header, custom-header, custom-logo, featured-image-header, featured-images, full-width-template, post-formats, sticky-post, threaded-comments, blog, e-commerce, portfolio
@@ -771,12 +771,13 @@ article {
 }
 
 input.search-field {
+	-webkit-appearance: initial;
 	font-size: 0.7em;
 	width: 100%;
 	padding: 1em;
 	border-top: hidden;
 	border-left: hidden;
-	border-bottom: solid #fff.9px;
+	border-bottom: solid #fff 1.9px;
 	border-right: hidden;
 	background: none;
 	color: #fff;
@@ -788,6 +789,8 @@ input.search-field {
 
 select#cat,
 #archives-dropdown-2 {
+	-webkit-appearance: initial;
+	-webkit-border-radius: initial;
 	border-top: hidden;
 	border-left: hidden;
 	border-bottom: solid #fff 1.9px;
@@ -1186,6 +1189,10 @@ form section{
 select,
 .contactInput,
 textarea {
+	-webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+	-webkit-border-radius: initial;
 	font-size: 0.7em; /* Use this to change the font size of the form fields */
 	padding: 1em;
 	margin: 0 1em;
