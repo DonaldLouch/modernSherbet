@@ -1695,6 +1695,10 @@ footer {
 	.welcomeButton a {
 		display: block;
 	}
+	#page article {
+		width: 97%;
+		margin: 0 0.5em 1.5em;
+	}
 	#postWrap {
 		display: block !important;
 		width: 95%;
@@ -1709,21 +1713,37 @@ footer {
 	.meta .metadata {
 		display: none; /* The meta information is hidden on mobile*/
 	}
+	.single-format-video article,
+	.single-format-audio article {
+		margin: 4em 0.5em 2.5em;
+		width: 96%;
+	}
 	.single-format-video iframe {
-		width: 100%;
-		height: 15em;
-		margin: -1.5em 0;
+		margin: 0.5em -1.84em;
+		width: 96.1vw;
+		height: 16.4em;
 	}
 	.wp-caption p.wp-caption-text {
 		display: none;
 	}
+	.content iframe {
+		margin: 0 -1.84em;
+		width: 93.9vw;
+		height: 15.4em;
+	}
+	#gallery-1, #gallery-2 {
+		display: block;
+	}
 	#gallery-2 .gallery-item {
-		clear: both; /* After every image, the next image is dispalyed in a new row */
-		height: 109%;
-		width: 109%;
+		margin: -2.3em -1.45em 0;
+		width: 83vw;
+		height: 30vh;
 	}
 	#gallery-2 img {
 		width: 300%;
+	}
+	.avatar.avatar-50.photo {
+		display: none;
 	}
 	.attachment-large {
 		width: 114%;
@@ -1735,6 +1755,11 @@ footer {
 	}
 	.tab {
 		font-size: 23px;
+	}
+	.tabContent iframe {
+		margin: -2.3em -1.45em 0;
+		width: 83vw;
+		height: 45vh;
 	}
 	.tags {
 		width: 90%;
@@ -1778,7 +1803,7 @@ footer {
 @media screen and (min-width: 601px) and (max-width: 1090px) {
 	header img {
 		width: 100%;
-		margin: 1.5vh 0;
+		margin: 0.6em 0;
 	}
 	#menu-main{
 		overflow: auto;
@@ -1792,6 +1817,9 @@ footer {
 	#postsWrap {
 		width: 94vw;
 	}
+	.avatar.avatar-50.photo {
+		display: none;
+	}
 	#calendar-2 {
 		display: none;
 	}
@@ -1799,23 +1827,51 @@ footer {
 		text-align: center;
 	}
 	#authorPosts {
-		width: 53em;
+		width: 58em;
+	}
+	#authorPosts h2 {
+		text-align: center;
+	}
+	#authorPosts .metadata {
+		text-align: center;
 	}
 	.wrapCenterAP img {
 		width: 88%;
 		height: auto;
 	}
+	.content iframe {
+		margin: 0 -1.84em;
+		width: 96.8vw;
+		height: 30em;
+	}
 	.downloadResButton {
 		width: 88%;
 	}
+	.single-format-video article,
+	.single-format-audio article {
+		margin: 4em 0.4em 2.5em;
+		width: 98.8%;
+	}
 	.single-format-video iframe {
-		width: 119.7%;
-		margin: 0.5vh -8.2vw 0;
-		height: 19.07em;
+		margin: 0 -1.84em;
+		width: 98.8vw;
+		height: 30.5em;
 	} /* Allows for the iFrames, videos to expand over the post limit */
 	img {
 		width: 100%;
 		height: auto;
+	}
+	#tabs nav a {
+		display: inline-block;
+		font-size: 1.3em;
+		line-height: 2.5;
+		padding: 0 1.25em;
+	}
+	.tabContent iframe,
+	.panel iframe {
+		margin: -1.9em -1.45em 0;
+		width: 90.4vw;
+		height: 86.5vh;
 	}
 }
 
