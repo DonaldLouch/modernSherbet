@@ -4,9 +4,9 @@
 	Author: Donald Louch Productions
 	Author URI: https://donaldlouch.ca
 	Description: Modern Sherbet is a modern twist on the taste design of sherbet. It’s bright and colourful! There’s animated button on hover, there’s drop shadows (also known a box shadows) all around the theme. The theme features shorcodes for toggles and further tabs. The theme is equipped with CSS for contact forms and Woocommerces. The theme features different styles for multiple post types which can be controlled in the WordPress Dashboard.
-	Version: 1.1.1
-	License: GNU General Public License v2 or later
-	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+	Version: 1.1.2
+	License: GNU General Public License v3 or later
+	License URI: http://www.gnu.org/licenses/gpl-3.0.html
 	Tags: flexible-header, custom-header, custom-logo, featured-image-header, featured-images, full-width-template, post-formats, sticky-post, threaded-comments, blog, e-commerce, portfolio
 	Text Domain: modernsherbet
 */
@@ -18,8 +18,7 @@
 =====================================================================
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, font, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -55,15 +54,16 @@ Table of Content
 	8.0: Gallery
 	9.0: Toggles
 	10.0: Tabs
-	11.0: Contact Form
-	12.0: Comment Section
-	13.0: Pages
-	14.0: Author
-	15.0: 404
-	16.0: WooCommerce's
-	17.0: Footer
-	18.0: Responsive Design
-	19.0: Custom Styles
+	11.0: Shortcode: Columns
+	12.0: Contact Form
+	13.0: Comment Section
+	14.0: Pages
+	15.0: Author
+	16.0: 404
+	17.0: WooCommerce's
+	18.0: Footer
+	19.0: Responsive Design
+	20.0: Custom Styles
 =====================================================================
 */
 
@@ -977,7 +977,7 @@ video.wp-video-shortcode,
 
 /*
 =====================================================================
-	9.0: Toggles
+	9.0: Shortcode: Toggles
 		- Creates the toggles/accordions (JavaScript Needed)
 		- Adapted from https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
 =====================================================================
@@ -1014,7 +1014,7 @@ video.wp-video-shortcode,
 
 /*
 =====================================================================
-	10.0: Tabs
+	10.0: Shortcode: Tabs
 		- Creates the tabs (JavaScript Needed)
 		- Adapted from https://tympanus.net/codrops/2014/03/21/responsive-full-width-tabs/
 =====================================================================
@@ -1159,7 +1159,7 @@ video.wp-video-shortcode,
 
 /*
 =====================================================================
-	11.0: Contact Form
+	12.0: Contact Form
 =====================================================================
 */
 
@@ -1215,7 +1215,7 @@ textarea {
 
 /*
 =====================================================================
-	12.0: Comment Section
+	13.0: Comment Section
 		- Classes adapted from: http://www.wpbeginner.com/wp-themes/how-to-style-your-wordpress-comments-layout/-
 =====================================================================
 */
@@ -1292,7 +1292,7 @@ textarea {
 
 .commentlist .reply a:hover {
 	background-color: #430C8C;
-	color: white;
+	color: #fff;
 } /* Links in the comments */
 
 .vcard .fn {
@@ -1405,7 +1405,7 @@ textarea {
 
 /*
 =====================================================================
-	13.0: Pages
+	14.0: Pages
 =====================================================================
 */
 
@@ -1424,7 +1424,7 @@ textarea {
 
 /*
 =====================================================================
-	14.0: Athour
+	15.0: Athour
 =====================================================================
 */
 
@@ -1457,7 +1457,7 @@ textarea {
 
 /*
 =====================================================================
-	15.0: 404
+	16.0: 404
 =====================================================================
 */
 
@@ -1473,7 +1473,7 @@ textarea {
 
 /*
 =====================================================================
-	16.0: WooCommerce's
+	17.0: WooCommerce's
 =====================================================================
 */
 
@@ -1628,7 +1628,7 @@ div#woocomerce {
 
 /*
 =====================================================================
-	17.0: Footer
+	18.0: Footer
 =====================================================================
 */
 
@@ -1637,7 +1637,7 @@ footer {
 	padding: 1.5em;
 	text-shadow: 42px 40px 47px #979090;
 	background: linear-gradient(50deg, #45484d 0%,#000000 100%);
-	color: #ffffff;
+	color: #fff;
 	font-size: 0.9em;
 	width: 100%;
 	margin: 0;
@@ -1653,7 +1653,7 @@ footer {
 
 /*
 =====================================================================
-	18.0: Responsive Design
+	19.0: Responsive Design
 =====================================================================
 */
 
@@ -1877,7 +1877,7 @@ footer {
 
 /*
 =====================================================================
-	19.0: Custom Styles
+	20.0: Custom Styles
 		- Not theme specefic; but in this install only!
 		- RECOMMEND Inserting custom styles in a child theme: included!
 =====================================================================
