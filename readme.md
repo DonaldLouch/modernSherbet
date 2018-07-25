@@ -17,6 +17,7 @@ With version 1.1.2, I introduced theme/plugin updates! You may now update modern
 For support visit the [Donald Louch Productions Support Portal](https://dlproductions.freshdesk.com/) via. Freshdesk.
 
 !!! IMPORTANT NOTE !!!
+
 You will need to go to Settings > Discussion > Select “5” from the “Enable threaded (nested) comments levels deep” section + Select “5 | last | and newer” from the “Break comments into pages with top level comments per page and the page displayed by defaultComments should be displayed with the comments at the top of each page” section in order for the comment section to work properly.
 
 From version 1.1 and above please note that shortcodes will be accessible via the modernSherbet Shortcode plugin which will be in the download zip file. You may also find the download link in the new (version 1.1.1 and above) administration panel!
@@ -66,7 +67,9 @@ Updated Files:
 - Updated File: modernsherbet-child.zip
 
 ### 1.1.1 (Released on July 19th, 2018 at 12:00PM)
-Introducing a brand new administration panel with settings for the header and footer; along with helpful resources! In addition when a post has no thumbnail (also known as Featured Image) there is a new style that'll be added where it will remove the thumbnail area and just add the meta box along with the post! I have also made some improvements with the code and such! Please make sure to read the documentation as there has been some major updates to the stylesheet in which is reflected within the documentation!
+Introducing a brand new administration panel with settings for the header and footer; along with helpful resources. In addition when a post has no thumbnail (also known as Featured Image) there is a new style that'll be added where it will remove the thumbnail area and just add the meta box along with the post. I have also made some improvements with the code and such. 
+
+Please make sure to read the documentation as there has been some major updates to the stylesheet in which is reflected within the documentation.
 
 NEW
 - Admin Panel
@@ -91,7 +94,7 @@ Updated Files:
 - style.css
 
 ### 1.1 (Released on July 11th, 2018 at 12:00PM)
-Introducing: Modern Sherbet Child: A child theme for customization's! Plus the following to the main theme:
+Introducing: modernSherbet Child: A child theme for customization's. Plus the following to the main theme:
 
 NEW!:
 - Shortcode: No Break
