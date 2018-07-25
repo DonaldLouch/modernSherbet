@@ -63,10 +63,10 @@ function modernsherbet_settings_links(){
 	echo '
 	<p>For resources in regards to modernSherbet; here are some helpful links:</p>
 	<ul>
-		<li><a href="https://files.donaldlouch.ca/index.php/s/qDQoXnkcnnB48ag">Download Child Theme</a></li>
-		<li><a href="https://files.donaldlouch.ca/index.php/s/s7fmXR9xs9WweYL">Download Shortcode Plugin</a></li>
+		<li><a href="https://github.com/DonaldLouch/modernSherbetChild/releases">Download Child Theme</a></li>
+		<li><a href="https://github.com/DonaldLouch/modernSherbetShortcode/releases">Download Shortcode Plugin</a></li>
 		<li><a href="https://sherbet.theme.donaldlouch.ca/documentation/">Documentation</a></li>
-		<li><a href="https://sherbet.theme.donaldlouch.ca/change-log/">Chanhelog</a></li>
+		<li><a href="https://sherbet.theme.donaldlouch.ca/change-log/">Changelog</a></li>
 		<li><a href="https://dlproductions.freshdesk.com/support/home">HELP!</a></li>
 	</ul>
 	';

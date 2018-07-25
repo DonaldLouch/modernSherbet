@@ -4,9 +4,9 @@
 	Author: Donald Louch Productions
 	Author URI: https://donaldlouch.ca
 	Description: Modern Sherbet is a modern twist on the taste design of sherbet. It’s bright and colourful! There’s animated button on hover, there’s drop shadows (also known a box shadows) all around the theme. The theme features shorcodes for toggles and further tabs. The theme is equipped with CSS for contact forms and Woocommerces. The theme features different styles for multiple post types which can be controlled in the WordPress Dashboard.
-	Version: 1.1.1
-	License: GNU General Public License v2 or later
-	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+	Version: 1.1.2
+	License: GNU General Public License v3 or later
+	License URI: http://www.gnu.org/licenses/gpl-3.0.html
 	Tags: flexible-header, custom-header, custom-logo, featured-image-header, featured-images, full-width-template, post-formats, sticky-post, threaded-comments, blog, e-commerce, portfolio
 	Text Domain: modernsherbet
 */
@@ -18,8 +18,7 @@
 =====================================================================
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, font, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -55,15 +54,16 @@ Table of Content
 	8.0: Gallery
 	9.0: Toggles
 	10.0: Tabs
-	11.0: Contact Form
-	12.0: Comment Section
-	13.0: Pages
-	14.0: Author
-	15.0: 404
-	16.0: WooCommerce's
-	17.0: Footer
-	18.0: Responsive Design
-	19.0: Custom Styles
+	11.0: Shortcode: Columns
+	12.0: Contact Form
+	13.0: Comment Section
+	14.0: Pages
+	15.0: Author
+	16.0: 404
+	17.0: WooCommerce's
+	18.0: Footer
+	19.0: Responsive Design
+	20.0: Custom Styles
 =====================================================================
 */
 
@@ -579,12 +579,16 @@ h2.pageNav {
 } /* Hides the "Screen Reader" titles for the pagination */
 
 .navigation.post-navigation div {
-	display: inline-block;
-	margin: 0.2em; width: 100%;
+    margin: -0em 0.2em;
+    display: inline-flex;
 }
 
 .navigation.post-navigation {
-	margin: -0.9em 2em;
+    margin: -0.9em 2em;
+}
+
+.nav-links a {
+    width: 100%;
 }
 
 /*
@@ -768,12 +772,13 @@ article {
 }
 
 input.search-field {
+	-webkit-appearance: initial;
 	font-size: 0.7em;
 	width: 100%;
 	padding: 1em;
 	border-top: hidden;
 	border-left: hidden;
-	border-bottom: solid #fff.9px;
+	border-bottom: solid #fff 1.9px;
 	border-right: hidden;
 	background: none;
 	color: #fff;
@@ -785,6 +790,8 @@ input.search-field {
 
 select#cat,
 #archives-dropdown-2 {
+	-webkit-appearance: initial;
+	-webkit-border-radius: initial;
 	border-top: hidden;
 	border-left: hidden;
 	border-bottom: solid #fff 1.9px;
@@ -878,19 +885,21 @@ select#cat,
 .single-format-video article,
 .single-format-audio article {
 	margin: 4em 1em 2.5em;
+	width: 97.8%;
+}
+
+.single-format-video article .metadata,
+.single-format-audio article .metadata{
+    font-size: 1.2em;
+    margin: 1em 0;
 }
 
 .single-format-video iframe {
-	width: 106.8%;
-	height: 47.8em;
-	margin: -9vh -3.2vw 0;
+	width: 106.5%;
+	height: 47.9em;
+	margin: -9vh -3.03vw 0;
 	z-index: 1;
 } /* Allows for the iFrames, videos to expand over the post limit */
-
-.single-format-audio iframe {
-	width: 107%;
-	margin: 2vh -3.2vw 0;
-} /* Allows for the iFrames, audio to expand over the post limit */
 
 .single-format-link #post .content {
 	text-align: center;
@@ -969,7 +978,7 @@ video.wp-video-shortcode,
 
 /*
 =====================================================================
-	9.0: Toggles
+	9.0: Shortcode: Toggles
 		- Creates the toggles/accordions (JavaScript Needed)
 		- Adapted from https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
 =====================================================================
@@ -1006,7 +1015,7 @@ video.wp-video-shortcode,
 
 /*
 =====================================================================
-	10.0: Tabs
+	10.0: Shortcode: Tabs
 		- Creates the tabs (JavaScript Needed)
 		- Adapted from https://tympanus.net/codrops/2014/03/21/responsive-full-width-tabs/
 =====================================================================
@@ -1104,7 +1113,54 @@ video.wp-video-shortcode,
 
 /*
 =====================================================================
-	11.0: Contact Form
+	11.0: Shortcode: Columns
+=====================================================================
+*/
+
+.columns {
+    display: grid;
+    text-align: center;
+}
+
+.column {
+	margin: 0.5em;
+	padding: 0.5em 0;
+}
+
+.columns.\32 {
+    grid-template-columns: 50% 50%;
+}
+
+.columns.\33 {
+    grid-template-columns: 33.33% 33.33% 33.33%;
+}
+
+.columns.\34 {
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.columns.\35 {
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.columns.\31 \/3 {
+	text-align: left;
+	grid-template-columns: 20% 80%;
+}
+
+.columns.\33 \/1 {
+	text-align: left;
+	grid-template-columns: 80% 20%;
+}
+
+.columns.\31 \/2\/1 {
+	text-align: left;
+	grid-template-columns: 20% 60% 20%;
+}
+
+/*
+=====================================================================
+	12.0: Contact Form
 =====================================================================
 */
 
@@ -1136,6 +1192,10 @@ form section{
 select,
 .contactInput,
 textarea {
+	-webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+	-webkit-border-radius: initial;
 	font-size: 0.7em; /* Use this to change the font size of the form fields */
 	padding: 1em;
 	margin: 0 1em;
@@ -1156,7 +1216,7 @@ textarea {
 
 /*
 =====================================================================
-	12.0: Comment Section
+	13.0: Comment Section
 		- Classes adapted from: http://www.wpbeginner.com/wp-themes/how-to-style-your-wordpress-comments-layout/-
 =====================================================================
 */
@@ -1233,7 +1293,7 @@ textarea {
 
 .commentlist .reply a:hover {
 	background-color: #430C8C;
-	color: white;
+	color: #fff;
 } /* Links in the comments */
 
 .vcard .fn {
@@ -1346,7 +1406,7 @@ textarea {
 
 /*
 =====================================================================
-	13.0: Pages
+	14.0: Pages
 =====================================================================
 */
 
@@ -1365,7 +1425,7 @@ textarea {
 
 /*
 =====================================================================
-	14.0: Athour
+	15.0: Athour
 =====================================================================
 */
 
@@ -1398,7 +1458,7 @@ textarea {
 
 /*
 =====================================================================
-	15.0: 404
+	16.0: 404
 =====================================================================
 */
 
@@ -1414,7 +1474,7 @@ textarea {
 
 /*
 =====================================================================
-	16.0: WooCommerce's
+	17.0: WooCommerce's
 =====================================================================
 */
 
@@ -1569,7 +1629,7 @@ div#woocomerce {
 
 /*
 =====================================================================
-	17.0: Footer
+	18.0: Footer
 =====================================================================
 */
 
@@ -1578,7 +1638,7 @@ footer {
 	padding: 1.5em;
 	text-shadow: 42px 40px 47px #979090;
 	background: linear-gradient(50deg, #45484d 0%,#000000 100%);
-	color: #ffffff;
+	color: #fff;
 	font-size: 0.9em;
 	width: 100%;
 	margin: 0;
@@ -1594,7 +1654,7 @@ footer {
 
 /*
 =====================================================================
-	18.0: Responsive Design
+	19.0: Responsive Design
 =====================================================================
 */
 
@@ -1636,6 +1696,10 @@ footer {
 	.welcomeButton a {
 		display: block;
 	}
+	#page article {
+		width: 97%;
+		margin: 0 0.5em 1.5em;
+	}
 	#postWrap {
 		display: block !important;
 		width: 95%;
@@ -1650,21 +1714,37 @@ footer {
 	.meta .metadata {
 		display: none; /* The meta information is hidden on mobile*/
 	}
+	.single-format-video article,
+	.single-format-audio article {
+		margin: 4em 0.5em 2.5em;
+		width: 96%;
+	}
 	.single-format-video iframe {
-		width: 100%;
-		height: 15em;
-		margin: -1.5em 0;
+		margin: 0.5em -1.84em;
+		width: 96.1vw;
+		height: 16.4em;
 	}
 	.wp-caption p.wp-caption-text {
 		display: none;
 	}
+	.content iframe {
+		margin: 0 -1.84em;
+		width: 93.9vw;
+		height: 15.4em;
+	}
+	#gallery-1, #gallery-2 {
+		display: block;
+	}
 	#gallery-2 .gallery-item {
-		clear: both; /* After every image, the next image is dispalyed in a new row */
-		height: 109%;
-		width: 109%;
+		margin: -2.3em -1.45em 0;
+		width: 83vw;
+		height: 30vh;
 	}
 	#gallery-2 img {
 		width: 300%;
+	}
+	.avatar.avatar-50.photo {
+		display: none;
 	}
 	.attachment-large {
 		width: 114%;
@@ -1676,6 +1756,11 @@ footer {
 	}
 	.tab {
 		font-size: 23px;
+	}
+	.tabContent iframe {
+		margin: -2.3em -1.45em 0;
+		width: 83vw;
+		height: 45vh;
 	}
 	.tags {
 		width: 90%;
@@ -1719,7 +1804,7 @@ footer {
 @media screen and (min-width: 601px) and (max-width: 1090px) {
 	header img {
 		width: 100%;
-		margin: 1.5vh 0;
+		margin: 0.6em 0;
 	}
 	#menu-main{
 		overflow: auto;
@@ -1733,6 +1818,9 @@ footer {
 	#postsWrap {
 		width: 94vw;
 	}
+	.avatar.avatar-50.photo {
+		display: none;
+	}
 	#calendar-2 {
 		display: none;
 	}
@@ -1740,29 +1828,57 @@ footer {
 		text-align: center;
 	}
 	#authorPosts {
-		width: 53em;
+		width: 58em;
+	}
+	#authorPosts h2 {
+		text-align: center;
+	}
+	#authorPosts .metadata {
+		text-align: center;
 	}
 	.wrapCenterAP img {
 		width: 88%;
 		height: auto;
 	}
+	.content iframe {
+		margin: 0 -1.84em;
+		width: 96.8vw;
+		height: 30em;
+	}
 	.downloadResButton {
 		width: 88%;
 	}
+	.single-format-video article,
+	.single-format-audio article {
+		margin: 4em 0.4em 2.5em;
+		width: 98.8%;
+	}
 	.single-format-video iframe {
-		width: 119.7%;
-		margin: 0.5vh -8.2vw 0;
-		height: 19.07em;
+		margin: 0 -1.84em;
+		width: 98.8vw;
+		height: 30.5em;
 	} /* Allows for the iFrames, videos to expand over the post limit */
 	img {
 		width: 100%;
 		height: auto;
 	}
+	#tabs nav a {
+		display: inline-block;
+		font-size: 1.3em;
+		line-height: 2.5;
+		padding: 0 1.25em;
+	}
+	.tabContent iframe,
+	.panel iframe {
+		margin: -1.9em -1.45em 0;
+		width: 90.4vw;
+		height: 86.5vh;
+	}
 }
 
 /*
 =====================================================================
-	19.0: Custom Styles
+	20.0: Custom Styles
 		- Not theme specefic; but in this install only!
 		- RECOMMEND Inserting custom styles in a child theme: included!
 =====================================================================

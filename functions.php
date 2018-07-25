@@ -14,6 +14,19 @@
 	//Theme: Word{ress Cleanup
 		require get_template_directory() . '/inc/cleanup.php';
 
+/*
+=====================================================================
+	Update Checker
+=====================================================================
+*/
+
+		require 'plugin-update-checker/plugin-update-checker.php';
+		$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+			'https://github.com/DonaldLouch/modernSherbet',
+			__FILE__,
+			'modernsherbet'
+		);
+		$myUpdateChecker->setBranch('stable');
 
 /*
 =====================================================================
@@ -58,8 +71,9 @@
 	add_action( 'after_setup_theme', 'modernsherbet_support' );
 
 //Adds support for the custom CSS within the settings
+	add_action( 'init', 'modernsherbet_add_editor_styles' );
 	function modernsherbet_add_editor_styles() {
-	 add_editor_style( 'style.css' );
+	 //add_editor_style( 'style.css' );
 	}
 	add_action( 'init', 'modernsherbet_add_editor_styles' );
 
