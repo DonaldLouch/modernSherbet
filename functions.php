@@ -20,17 +20,13 @@
 =====================================================================
 */
 
-
 		require 'plugin-update-checker/plugin-update-checker.php';
 		$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 			'https://github.com/DonaldLouch/modernSherbet',
 			__FILE__,
 			'modernsherbet'
 		);
-
-		//Optional: Set the branch that contains the stable release.
 		$myUpdateChecker->setBranch('stable');
-
 
 /*
 =====================================================================
@@ -75,8 +71,9 @@
 	add_action( 'after_setup_theme', 'modernsherbet_support' );
 
 //Adds support for the custom CSS within the settings
+	add_action( 'init', 'modernsherbet_add_editor_styles' );
 	function modernsherbet_add_editor_styles() {
-	 add_editor_style( 'style.css' );
+	 //add_editor_style( 'style.css' );
 	}
 	add_action( 'init', 'modernsherbet_add_editor_styles' );
 
