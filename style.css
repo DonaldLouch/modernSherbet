@@ -4,7 +4,7 @@
 	Author: Donald Louch Productions
 	Author URI: https://donaldlouch.ca
 	Description: Modern Sherbet is a modern twist on the taste design of sherbet. It’s bright and colourful! There’s animated button on hover, there’s drop shadows (also known a box shadows) all around the theme. The theme features shorcodes for toggles and further tabs. The theme is equipped with CSS for contact forms and Woocommerces. The theme features different styles for multiple post types which can be controlled in the WordPress Dashboard.
-	Version: 1.1.2
+	Version: 1.2
 	License: GNU General Public License v3 or later
 	License URI: http://www.gnu.org/licenses/gpl-3.0.html
 	Tags: flexible-header, custom-header, custom-logo, featured-image-header, featured-images, full-width-template, post-formats, sticky-post, threaded-comments, blog, e-commerce, portfolio
@@ -52,18 +52,19 @@ Table of Content
 	6.0: Sidebar
 	7.0: Post Content
 	8.0: Gallery
-	9.0: Toggles
-	10.0: Tabs
+	9.0: Shortcode: Toggles
+	10.0: Shortcode: Tabs
 	11.0: Shortcode: Columns
-	12.0: Contact Form
-	13.0: Comment Section
-	14.0: Pages
-	15.0: Author
-	16.0: 404
-	17.0: WooCommerce's
-	18.0: Footer
-	19.0: Responsive Design
-	20.0: Custom Styles
+	12.0: Shortcode: Title
+	13.0: Contact Form
+	14.0: Comment Section
+	15.0: Pages
+	16.0: Author
+	17.0: 404
+	18.0: WooCommerce's
+	19.0: Footer
+	20.0: Responsive Design
+	21.0: Custom Styles
 =====================================================================
 */
 
@@ -74,7 +75,7 @@ Table of Content
 */
 
 body {
-	font-size: 18px;
+	font-size: 16px;
 	font-family: "lato", sans-serif; /* Use this to change the font */
 	margin: 0;
 	background: linear-gradient(135deg, rgba(67,12,140,0.9542017490589986) 0%, rgba(231,196,98,1) 49%, rgba(115,229,147,1) 100%);  /* Creates a the modernSherbet gradient */
@@ -235,14 +236,22 @@ sup {
 }
 
 table {
-	border-collapse: collapse;
-	width: 100%;
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 3px 5px 20px 6px rgba(0, 0, 0, 0.5);
+		margin: 1em 0;
 }
 
 td, th {
-	border: 1px solid #dddddd;
+	border: 1px solid #764788;
 	text-align: left;
-	padding: 8px;
+	padding: 0.8em;
+}
+
+th {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 tr:nth-child(2n) {
@@ -257,46 +266,55 @@ tr:nth-child(2n) a {
 .alignnone.size-large {
 	width: 100%;
 	height: 100%;
+	margin: auto;
 }
 
 .alignnone {
-	margin: 5px 20px 20px 0;
+	margin: 1.1em;
+	width: 100%;
+	height: 100%;
 }
 
 .aligncenter,
 div.aligncenter {
 	display: block;
-	margin: 5px auto 5px auto;
+	margin: 0.5em auto;
+	width: 100%;
+	height: 100%;
 }
 
 .alignright {
 	float:right;
-	margin: 5px 0 20px 20px;
+	margin: 1.1em;
 }
 
 .alignleft {
 	float: left;
-	margin: 5px 20px 20px 0;
+	margin: 1.1em;
 }
 
 a img.alignright {
 	float: right;
-	margin: 5px 0 20px 20px;
+	margin: 1.1em;
 }
 
 a img.alignnone {
-	margin: 5px 20px 20px 0;
+	margin: 1.1em;
+	width: 100%;
+	height: 100%;
 }
 
 a img.alignleft {
 	float: left;
-	margin: 5px 20px 20px 0;
+	margin: 1.1em;
 }
 
 a img.aligncenter {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	width: 100%;
+	height: 100%;
 }
 
 .wp-caption {
@@ -465,16 +483,16 @@ header {
 	display: grid;
 	grid-template-columns: 30% 70%;
 	box-shadow: -2px 7px 18px 3px rgba(0, 0, 0, 0.5);
-	padding: 0.2em 1em 2em;
+	padding: 0.05em 0.3em;
 	background-color: #fff; /* Use this to change the background colour of the header*/
 	position: fixed;
-	height: 4.6em;
+	height: 3.6em;
 	z-index: 100;
 	width: 98.7%;
-	top: 0.6vh;
+	top: 1.2vh;
 	left: 0.6vw; /* Creates a sticky + floating header */
 	animation-name: header;
-	animation-duration: 0.8s; /* Adds an animation to the header when loading */
+	animation-duration: 0.8s; /* Adds an animation to the header when loading*/
 }
 @keyframes header {
 	0% {
@@ -491,20 +509,21 @@ header {
 } /* Creates a fade-in with a slide from top left to centre when loading the page */
 
 header img {
-	width: 19vw;
-	margin: 0.56em 0;
+	margin: 0.22em 0 !important;
+	width: 100% !important; max-width: 280px !important;
+	height: auto !important;
 }
 
 #menu-main {
 	text-align: right;
-	margin: 0.65em;
+	margin: 0.66em 0.65em;
 	overflow: auto;
 	white-space: nowrap;
 }
 
 #menu-main li {
 	display: inline-block;
-	margin: 0.5em 0;
+	margin: 0.3em 0;
 }
 
 #menu-main a {
@@ -514,13 +533,21 @@ header img {
 	border-bottom: solid #16042F;
 }
 
+.current_page_item a,
+.current_page_parent a {
+    font-weight: bold;
+    color: #DCAA1B;
+    text-shadow: none !important;
+    border: none !important;
+}
+
 /*Main sub menu style + level 1*/
 .sub-menu {
 	display: none; /* When in normal state, the sub menu is not displayed  */
 	position: fixed;
 	text-align: center;
 	padding: 1em;
-	margin: 3vh 0;
+	margin: 2.5vh 0;
 	left: 0.8vw;
 	width: 98%;
 	background: rgba(245,244,244,0.95); /* Use this to change the background colour of the sub menu */
@@ -653,7 +680,7 @@ h2.pageNav {
 	display: grid;
 	grid-template-columns: 74% 24%;
 	max-width: 100%;
-	margin: 4em 0 0;
+	margin: 3.6em 0 0;
 }
 
 #posts {
@@ -724,7 +751,7 @@ article {
 
 .tags {
 	padding: 1em;
-	border: 2px solid black;
+	border: 2px solid #000;
 }
 
 #posts .tags {
@@ -735,6 +762,7 @@ article {
 	margin: -1em 1em 0;
 	background: linear-gradient(135deg, rgba(231,195,98,1) 0%, rgba(167,142,71,0.93) 100%);
 	padding: 1em;
+	box-shadow: 2px 3px 20px 2px rgba(0, 0, 0, 0.2);
 }
 
 /*
@@ -814,6 +842,17 @@ select#cat,
 	margin: 0 2em 1.5em;
 }
 
+#sidebar #wp-calendar a {
+    color: #E7C462;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#wp-calendar,
+.woocommerce table {
+    box-shadow: none;
+}
+
 /*
 =====================================================================
 	7. 0: Post Content
@@ -834,7 +873,7 @@ select#cat,
 	background-color: rgba(245,244,244,0.8); /* Use this to change the background colour of the meta information */
 	padding: 1em;
 	position: absolute;
-	top: 5.5em;
+	top: 5em;
 	animation-name: meta;
 	animation-duration: 2s; /* Adds an animation to the Meta Box when hovering */
 }
@@ -857,8 +896,20 @@ select#cat,
 } /* Overlays the meta infomation on top of the thumbnail */
 
 .metaNI {
+	background: linear-gradient(131deg, rgba(255,50,59,1) 0%, rgba(193,38,45,0.7) 100%);
+	color: #fff;
 	width: 96%;
-	margin: 0 1.5em;
+	margin: 0em 2em;
+}
+
+.metaNI h2 {
+    font-size: 3.5em;
+    margin: 0 0 -0.1em;
+}
+
+.metaNI a {
+    color: #fff;
+    font-weight: bold;
 }
 
 .postContent article {
@@ -866,39 +917,72 @@ select#cat,
 }
 
 .postContentNI {
-	margin: 35vh 0 0;
+	margin: 13em 0 0;
 }
 
 .postContentNI article {
 	width: 98%;
 	margin: 0 auto 2em;
-}
-
-.content iframe {
-    margin: 0 -1.84em;
-    width: 97.9vw;
-    height: 47.4em;
+	padding: 4.5em 2em 1.5em;
 }
 
 /* Post Format Options */
 .single-format-video article,
-.single-format-audio article {
-	margin: 4em 1em 2.5em;
-	width: 97.8%;
+.single-format-audio article,
+.single-format-image article{
+	margin: -1.3em 1em 2.5em;
+}
+
+.single-format-image article {
+    margin: 4em 1em 2.5em;
+}
+
+.single-format-audio .postContent {
+    margin: 5em 0 0;
 }
 
 .single-format-video article .metadata,
-.single-format-audio article .metadata{
-    font-size: 1.2em;
+.single-format-audio article .metadata,
+.single-format-image article .metadata{
+   	font-size: 1.2em;
     margin: 1em 0;
+		clear: both;
+}
+
+.single-format-gallery .metaNI {
+		background: linear-gradient(131deg, rgba(67,12,140,1) 0%, rgba(18,32,224,0.7) 100%);
+    color: #fff;
+}
+
+.single-format-gallery article {
+    padding: 5.5em 2em 2em;
+}
+
+.single-format-video header {
+    position: relative;
+}
+
+.single-format-video #post {
+    margin: 1em 0 0;
+}
+
+.single-format-video .contentEmbedContainer {
+	max-width: 100vw; width: 99vw;
+	margin-left: -2.5em;
+	padding-bottom: 56.6%;
 }
 
 .single-format-video iframe {
-	width: 106.5%;
-	height: 47.9em;
-	margin: -9vh -3.03vw 0;
-	z-index: 1;
-} /* Allows for the iFrames, videos to expand over the post limit */
+	margin: 0;
+}
+
+.single-format-audio #audioBed {
+    padding-bottom: 90vh;
+}
+
+.single-format-audio img {
+    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.5);
+}
 
 .single-format-link #post .content {
 	text-align: center;
@@ -910,9 +994,36 @@ video.wp-video-shortcode,
 .mejs-container,
 .mejs-overlay.load {
     width: 100% !important;
-    height: 49em !important;
-    margin: 2vh 0 0;
-    z-index: 1;
+    /* margin: 2vh 0 0; */
+}
+
+video.wp-video-shortcode {
+    /* width: 100% !important;
+    height: 100% !important;
+		margin: 0 !important; */
+}
+
+#wpVid {
+    padding-bottom: 0%;
+}
+
+.contentEmbedContainer {
+	position: relative;
+	padding-bottom: 58%;
+	height: auto;
+	overflow: hidden;
+	max-width: 200%;
+	margin: 0 -2em;
+}
+
+.contentEmbedContainer iframe,
+.contentEmbedContainer object,
+.contentEmbedContainer embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 /*
@@ -939,7 +1050,8 @@ video.wp-video-shortcode,
 	margin: 0;
 }
 
-#gallery-1, #gallery-2 {
+#gallery-1,
+#gallery-2 {
 	display: grid;
 	grid-template-columns: 25% 25% 25% 25%;
 }
@@ -1006,10 +1118,8 @@ video.wp-video-shortcode,
 	text-align: justify;
 }
 
-.panel iframe {
-	margin: -2em -3.5em 0;
-	width: 97.9vw;
-	height: 51em;
+.panel .contentEmbedContainer {
+    margin: -3em -3.5em -2em;
 }
 
 /*
@@ -1021,10 +1131,9 @@ video.wp-video-shortcode,
 */
 
 #tabs {
-	width: 100%;
-	overflow: hidden;
-	margin: 1em 0 2em;
-	font-weight: 300;
+    margin: 1em -2em 2em;
+    font-weight: 300;
+    width: auto;
 }
 
 /* Nav */
@@ -1035,6 +1144,7 @@ video.wp-video-shortcode,
 
 #tabs nav ul {
 	padding: 0;
+	width: 100%;
 	margin: 0;
 	list-style: none;
 	display: inline-block;
@@ -1062,6 +1172,11 @@ video.wp-video-shortcode,
 	color: #768e9d;
 }
 
+#tabs .tab-current {
+    font-weight: bold;
+    color: #E7C462;
+}
+
 /* Content */
 .tabContent section {
 	font-size: 1.25em;
@@ -1070,10 +1185,10 @@ video.wp-video-shortcode,
 	margin: 0 auto;
 }
 
-.tabContent iframe {
-    margin: -2.3em -1.45em 0;
-    width: 93.4vw;
-		height: 96vh;
+.tabContent .contentEmbedContainer {
+	margin: -2.25em -1.5em 0;
+	padding-bottom: 55.3%;
+	width: auto;
 }
 
 /* Fallback example */
@@ -1087,29 +1202,6 @@ video.wp-video-shortcode,
 	display: block;
 }
 
-@media screen and (max-width: 52.375em) {
-	#tabs nav a span {
-		display: none;
-	}
-	#tabs nav a:before {
-		margin-right: 0;
-	}
-}
-
-@media screen and (max-width: 32em) {
-	#tabs nav ul,
-	#tabs nav ul li a {
-		width: 100%;
-		padding: 0;
-	}
-
-	#tabs nav ul li {
-		width: 20%;
-		/* width: calc(20% + 1px); */
-		margin: 0 0 0 -1px;
-	}
-}
-
 /*
 =====================================================================
 	11.0: Shortcode: Columns
@@ -1119,11 +1211,12 @@ video.wp-video-shortcode,
 .columns {
     display: grid;
     text-align: center;
+		margin: 0 -1.6em;
+		padding: 0;
 }
 
 .column {
 	margin: 0.5em;
-	padding: 0.5em 0;
 }
 
 .columns.\32 {
@@ -1157,9 +1250,33 @@ video.wp-video-shortcode,
 	grid-template-columns: 20% 60% 20%;
 }
 
+#images2 img {
+    width: 100%;
+    height: 100%;
+    clear: both;
+		margin: 0;
+}
+
+#images3 img {
+    width: 100%;
+    height: 100%;
+    clear: both;
+		margin: 0;
+}
+
 /*
 =====================================================================
-	12.0: Contact Form
+	 12.0: Shortcode: Video Title
+=====================================================================
+*/
+
+.videoTitle {
+    font-size: 1.3em;
+}
+
+/*
+=====================================================================
+	13.0: Contact Form
 =====================================================================
 */
 
@@ -1215,7 +1332,7 @@ textarea {
 
 /*
 =====================================================================
-	13.0: Comment Section
+	14.0: Comment Section
 		- Classes adapted from: http://www.wpbeginner.com/wp-themes/how-to-style-your-wordpress-comments-layout/-
 =====================================================================
 */
@@ -1352,7 +1469,7 @@ textarea {
 }
 
 .commentlist li p {
-	border: black solid 2px;
+	border: #000 solid 2px;
 	padding: 1em;
 	margin: 1em;
 } /* Comments */
@@ -1405,7 +1522,7 @@ textarea {
 
 /*
 =====================================================================
-	14.0: Pages
+	15.0: Pages
 =====================================================================
 */
 
@@ -1424,12 +1541,12 @@ textarea {
 
 /*
 =====================================================================
-	15.0: Athour
+	16.0: Athour
 =====================================================================
 */
 
 #authourBio {
-	margin: 5.9em 1em 0;
+	margin: 5.2em 1.3em 0 1em;
 	background: linear-gradient(135deg, rgba(231,195,98,1) 0%, rgba(167,142,71,0.93) 100%);
 	padding:  0 2em 2em;
 }
@@ -1437,6 +1554,7 @@ textarea {
 .authorH2 {
 	text-align: center;
 	color: #fff;
+	margin: 0.2em 0 0.4em;
 }
 
 .authorWrap {
@@ -1444,7 +1562,7 @@ textarea {
 }
 
 #authorPosts {
-	width: 91em;
+	width: 97.8vw;
 }
 
 #authorPosts .navigation.pagination {
@@ -1457,7 +1575,7 @@ textarea {
 
 /*
 =====================================================================
-	16.0: 404
+	17.0: 404
 =====================================================================
 */
 
@@ -1473,12 +1591,12 @@ textarea {
 
 /*
 =====================================================================
-	17.0: WooCommerce's
+	18.0: WooCommerce's
 =====================================================================
 */
 
 article.woocomerce {
-	margin: 1em;
+	margin: -1em 1.9em 1em 1em;
 }
 
 .woocommerce-page .wrap {
@@ -1628,7 +1746,7 @@ div#woocomerce {
 
 /*
 =====================================================================
-	18.0: Footer
+	19.0: Footer
 =====================================================================
 */
 
@@ -1653,7 +1771,7 @@ footer {
 
 /*
 =====================================================================
-	19.0: Responsive Design
+	20.0: Responsive Design
 =====================================================================
 */
 
@@ -1677,11 +1795,11 @@ footer {
 		width: 98.5%
 	}
 	header img {
-		width: 44%;
+		max-width: 220px;
 	}
 	#menu-main {
 		text-align: center;
-		margin: -1.3em;
+		margin: -0.5em 0 0;
 		overflow: auto;
 		white-space: nowrap;
 		width: 97vw;
@@ -1707,37 +1825,30 @@ footer {
 		display: none;
 	}
 	#posts article {
-		width: 147%;
-		margin: 1.5em -0.3em;
+		width: 96.6vw;
+		margin: 1.5em -0.29em;
 	}
 	.meta .metadata {
 		display: none; /* The meta information is hidden on mobile*/
 	}
-	.single-format-video article,
-	.single-format-audio article {
-		margin: 4em 0.5em 2.5em;
-		width: 96%;
+	.metaNI {
+	    margin: 2.5em 0.8em;
+	    text-align: center;
+	    font-size: 0.8em;
 	}
-	.single-format-video iframe {
-		margin: 0.5em -1.84em;
-		width: 96.1vw;
-		height: 16.4em;
-	}
+	.single-format-gallery article {
+    padding: 4.5em 2em 2em;
+}
 	.wp-caption p.wp-caption-text {
 		display: none;
-	}
-	.content iframe {
-		margin: 0 -1.84em;
-		width: 93.9vw;
-		height: 15.4em;
 	}
 	#gallery-1, #gallery-2 {
 		display: block;
 	}
 	#gallery-2 .gallery-item {
-		margin: -2.3em -1.45em 0;
-		width: 83vw;
-		height: 30vh;
+		margin: 0.1em -1.45em 0;
+		width: 31.9vw;
+		height: auto;
 	}
 	#gallery-2 img {
 		width: 300%;
@@ -1756,11 +1867,6 @@ footer {
 	.tab {
 		font-size: 23px;
 	}
-	.tabContent iframe {
-		margin: -2.3em -1.45em 0;
-		width: 83vw;
-		height: 45vh;
-	}
 	.tags {
 		width: 90%;
 	}
@@ -1770,9 +1876,7 @@ footer {
 	#comments article {
 		margin: 1em 0;
 	}
-	#commentform input,
-	#commentform textarea,
-	#commentform label {
+	#commentform input, #commentform textarea, #commentform label {
 		display: block;
 		margin: 0;
 		width: 100%;
@@ -1795,15 +1899,15 @@ footer {
 		width: 88%;
 	}
 	.backPost {
-		margin: 7.5em 0 0;
+		margin: 7.5em 0 2em;
 	}
 }
 
 /* Large Displaies*/
 @media screen and (min-width: 601px) and (max-width: 1090px) {
 	header img {
-		width: 100%;
-		margin: 0.6em 0;
+		margin: 0.4em 0;
+		max-width: 242px;
 	}
 	#menu-main{
 		overflow: auto;
@@ -1816,6 +1920,9 @@ footer {
 	}
 	#postsWrap {
 		width: 94vw;
+	}
+	.metaNI {
+	    margin: 0em 1.3em;
 	}
 	.avatar.avatar-50.photo {
 		display: none;
@@ -1839,45 +1946,27 @@ footer {
 		width: 88%;
 		height: auto;
 	}
-	.content iframe {
-		margin: 0 -1.84em;
-		width: 96.8vw;
-		height: 30em;
-	}
 	.downloadResButton {
-		width: 88%;
+		 width: 88%;
 	}
-	.single-format-video article,
-	.single-format-audio article {
-		margin: 4em 0.4em 2.5em;
-		width: 98.8%;
-	}
-	.single-format-video iframe {
-		margin: 0 -1.84em;
-		width: 98.8vw;
-		height: 30.5em;
-	} /* Allows for the iFrames, videos to expand over the post limit */
 	img {
 		width: 100%;
 		height: auto;
 	}
 	#tabs nav a {
 		display: inline-block;
-		font-size: 1.3em;
+	 	font-size: 1.3em;
 		line-height: 2.5;
 		padding: 0 1.25em;
 	}
-	.tabContent iframe,
-	.panel iframe {
-		margin: -1.9em -1.45em 0;
-		width: 90.4vw;
-		height: 86.5vh;
+	.backPost {
+		margin: 6em 0 2em;
 	}
 }
 
 /*
 =====================================================================
-	20.0: Custom Styles
+	21.0: Custom Styles
 		- Not theme specefic; but in this install only!
 		- RECOMMEND Inserting custom styles in a child theme: included!
 =====================================================================
