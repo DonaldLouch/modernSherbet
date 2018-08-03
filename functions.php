@@ -132,12 +132,23 @@ function load_single_template($template) {
       $new_template = locate_template(array('single-video.php' ));
     }
 
-// Template for Post with Audio Format
-	if ( has_post_format( 'audio' )) {
+		// Template for Post with Audio Format
+		if ( has_post_format( 'audio' )) {
       // use template file single-audio.php for video format
       $new_template = locate_template(array('single-audio.php' ));
     }
 
+		// Template for Post with Image Format
+		if ( has_post_format( 'image' )) {
+	      // use template file single-image.php for video format
+	      $new_template = locate_template(array('single-image.php' ));
+	   }
+
+		 // Template for Post with Gallery Format
+	 		if ( has_post_format( 'gallery' )) {
+	 	      // use template file single-gallery.php for video format
+	 	      $new_template = locate_template(array('single-gallery.php' ));
+	 	   }
   }
   return ('' != $new_template) ? $new_template : $template;
 }
